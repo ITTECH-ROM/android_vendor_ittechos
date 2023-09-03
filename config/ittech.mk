@@ -38,3 +38,12 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 # Enable dex2oat64 to do dexopt
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     dalvik.vm.dex2oat64.enabled=true
+
+# GApps
+TARGET_SUPPORTS_GOOGLE_RECORDER ?= true
+TARGET_INCLUDE_STOCK_ARCORE ?= true
+TARGET_INCLUDE_LIVE_WALLPAPERS ?= true
+TARGET_SUPPORTS_QUICK_TAP ?= false
+TARGET_SUPPORTS_CALL_RECORDING ?= true
+$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
+$(call inherit-product-if-exists, vendor/googleapps/googleapps.mk)    
