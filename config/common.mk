@@ -1,7 +1,10 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
+$(call inherit-product-if-exists, vendor/lineage/config/ittech.mk)
+$(call inherit-product-if-exists, vendor/addons/config.mk)
+$(call inherit-product-if-exists, external/faceunlock/config.mk)
 
-PRODUCT_BRAND ?= LineageOS
+PRODUCT_BRAND ?= ittechOS
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -205,8 +208,7 @@ PRODUCT_PACKAGE_OVERLAYS += \
 
 PRODUCT_PACKAGES += \
     DocumentsUIOverlay \
-    NetworkStackOverlay \
-    TrebuchetOverlay
+    NetworkStackOverlay
 
 # Translations
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/crowdin/overlay
